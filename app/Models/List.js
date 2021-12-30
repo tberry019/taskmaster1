@@ -21,7 +21,7 @@ export class List {
       <div class="bg-white shadow rounded">
         <div class="p-3">
           <p class="m-0">${this.title}</p>
-          <p>test2</p>
+          <p></p>
         </div>
       </div>
     </div>`
