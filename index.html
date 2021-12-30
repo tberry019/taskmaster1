@@ -27,15 +27,18 @@
 
   <main>
     <div class="container-fluid">
+
       <div class="row">
         <div class="col-3">
-          <form onsubmit="app.ListController.createList()">
+          <button class="btn btn-success" data-bs-target="#foodItemModal" data-bs-toggle="modal"
+            onclick="app.ListController.drawListForm()">Create List</button>
+          <!-- <form onsubmit="app.ListController.createList()">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="List Name..." aria-label="Username"
                 aria-describedby="basic-addon1">
               <button class="btn btn-success" onclick="app.ListController.createList()">Create List</button>
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
       <div class="row" id="list"></div>
@@ -67,6 +70,21 @@
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
   <script src="app/main.js" type="module"></script>
+
+  <div class="modal fade" id="new-list" tabindex="-1" aria-labelledby="newListLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-light">
+          <h5 class="modal-title" id="newListLabel">New List</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-body-slot">
+          <!-- FORM INJECTED HERE -->
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

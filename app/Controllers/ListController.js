@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { listService } from "../Services/ListService.js"
+import { getListForm } from "../Components/ListForm.js"
 
 function _drawList() {
   const lists = ProxyState.lists
@@ -8,15 +9,16 @@ function _drawList() {
   document.getElementById('list').innerHTML = template
 
 }
-
-
+function _drawListForm() {
+  document.getElementById('modal-body-slot').innerHTML = getListForm()
+}
 export class ListController {
   constructor() {
     ProxyState.on('lists', _drawList)
   }
   drawList() {
     _draw()
-    document.getElementById('list').innerHTML = getListForm()
+    document.getElementById('modal-body-slot').innerHTML = getListForm()
   }
 
   createList() {
@@ -30,6 +32,10 @@ export class ListController {
 
     }
     listService.createList(listData)
+  }
+
+  drawListForm() {
+    _drawListForm()
   }
 }
 
