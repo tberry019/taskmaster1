@@ -5,10 +5,13 @@ import { Task } from "./Models/Task.js"
 
 
 class AppState extends EventEmitter {
+  /** @type {import('./Models/List').List[]} */
   values = []
+
+
   tasks = []
 
-  /** @type {import('./Models/List').List[]} */
+
   lists = []
 }
 

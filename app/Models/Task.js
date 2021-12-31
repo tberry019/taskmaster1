@@ -5,7 +5,7 @@ export class Task {
 
   constructor(data) {
     this.id = data.id || generateId()
-    this.name = data.name
+    this.title = data.title
     this.model = data.model
     this.listItemId = data.listItemId
   }
@@ -15,7 +15,8 @@ export class Task {
     <div class="col-md-4 p-4">
       <div class="bg-white shadow rounded">
         <div class="p-3">
-          <p class="m-0">${this.name}</p>
+        
+          <p class="m-0">${this.title}</p>
           <p class="m-0">${this.id}</p>
           <p></p>
         </div>

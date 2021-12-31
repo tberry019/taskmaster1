@@ -1,20 +1,20 @@
 import { ProxyState } from "../AppState.js";
 import { List } from "../Models/List.js";
-//import List from "../Models/List.js";
+
 
 class ListService {
   // constructor() {
   //   ProxyState.on('lists', saveState)
   // }
 
-  removeList(id) {
-    const list = ProxyState.list.filter(l => l.id !== id)
-    ProxyState.list = list
+  deleteListItem(id) {
+    const list = ProxyState.lists.filter(l => l.id !== id)
+    ProxyState.lists = list
   }
   createList(listData) {
     const list = new List(listData)
     ProxyState.lists = [...ProxyState.lists, list]
-
+    console.log(listData)
   }
 }
 

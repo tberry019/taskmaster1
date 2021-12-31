@@ -18,13 +18,17 @@ export class List {
       <div class="bg-white shadow rounded">
         <div class="p-3">
           <p class="m-0">List tile:${this.title}</p>
+          <i class="mdi mdi-delete mdi-24px selectable text-danger" onclick="app.ListController.deleteListItem('${this.id}')"></i>
           <p></p>
           
             <form onsubmit="app.TaskController.createTask('${this.id}')">
               <div class="form-group d-flex">
                 <!-- Input field for tasks -->
-                <input type="text" name="name" class="form-control" placeholder="Tasks....">
+                <input type="text" name="title" class="form-control" placeholder="Tasks....">
                 <button class="btn btn-success">+</button>
+                <div class="row" id ="tasks${this.id}">
+
+                </div>
               </div>
             </form>
         </div>

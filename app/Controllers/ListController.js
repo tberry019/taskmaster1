@@ -9,6 +9,7 @@ function _drawList() {
   document.getElementById('list').innerHTML = template
 }
 
+
 function _drawListForm() {
   document.getElementById('modal-body-slot').innerHTML = getListForm()
 }
@@ -16,6 +17,8 @@ export class ListController {
   constructor() {
     ProxyState.on('lists', _drawList)
     ProxyState.on('tasks', _drawList)
+
+
     _drawList()
   }
 
@@ -23,8 +26,9 @@ export class ListController {
   createList() {
     window.event.preventDefault()
     console.log("submitted")
-
-    let form = window.event.target
+    /** @type {HTMLFormElement} */
+    // @ts-ignore
+    const form = window.event.target
     const listData = {
       title: form.title.value,
 
@@ -35,6 +39,11 @@ export class ListController {
 
   drawListForm() {
     _drawListForm()
+  }
+
+  deleteListItem(listItemId) {
+    console.log('list item id', listItemId);
+    listService.deleteListItem(listItemId)
   }
 }
 
