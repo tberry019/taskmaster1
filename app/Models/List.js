@@ -5,28 +5,45 @@ import { generateId } from "../Utils/generateId.js"
 
 
 export class List {
-
   constructor(data) {
-    this.id = generateId()
+    this.id = data.id || generateId()
     this.title = data.title
     this.model = data.model
 
-
-
   }
 
-  get Template() {
-    return `
+  get listTemplate() {
+    return /*html*/`
     <div class="col-md-4 p-4">
       <div class="bg-white shadow rounded">
         <div class="p-3">
-          <p class="m-0">${this.title}</p>
+          <p class="m-0">List tile:${this.title}</p>
           <p></p>
+          
+            <form onsubmit="app.TaskController.createTask('${this.id}')">
+              <div class="form-group d-flex">
+                <!-- Input field for tasks -->
+                <input type="text" name="name" class="form-control" placeholder="Tasks....">
+                <button class="btn btn-success">+</button>
+              </div>
+            </form>
         </div>
       </div>
+      
     </div>`
+
   }
+
+  get Tasks() {
+    let taskTemplate = ''
+    let foundTask = ProxyState.tasks.filter(t => t.listItemId == this.id)
+    foundTask.forEach(t => taskTemplate += taskTemplate)
+    return taskTemplate
+  }
+
 }
+
+
 
 
 
