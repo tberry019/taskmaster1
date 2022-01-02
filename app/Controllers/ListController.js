@@ -25,16 +25,16 @@ export class ListController {
 
   createList() {
     window.event.preventDefault()
-    console.log("submitted")
     /** @type {HTMLFormElement} */
     // @ts-ignore
     const form = window.event.target
     const listData = {
       title: form.title.value,
-
+      color: form.color.value
     }
+    console.log(listData)
     listService.createList(listData)
-    form.reset()
+    //form.reset()
   }
 
   drawListForm() {

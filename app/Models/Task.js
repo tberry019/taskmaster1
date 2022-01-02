@@ -18,7 +18,7 @@ export class Task {
         
           <p class="m-0">${this.title}</p>
           <p class="m-0">${this.id}</p>
-          <p></p>
+          <p>Test</p>
         </div>
       </div>
     </div>`
