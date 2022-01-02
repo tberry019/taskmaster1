@@ -5,6 +5,7 @@ import { ListController } from "./Controllers/ListController.js";
 
 import { Task } from "./Models/Task.js";
 import { TaskController } from "./Controllers/TaskController.js";
+import { loadState } from "./Utils/LocalStorage.js";
 
 class App {
   ValuesController = new ValuesController();
@@ -13,6 +14,7 @@ class App {
 }
 
 window["app"] = new App();
+loadState()
 
 
 

@@ -8,9 +8,9 @@ class TaskService {
   addValue() {
     ProxyState.tasks = [...ProxyState.tasks, new Task({ title: Math.random() })]
   }
-  removeTask(id) {
-    const task = ProxyState.task.filter(t => t.id !== id)
-    ProxyState.task = task
+  deleteTaskItem(id) {
+    const task = ProxyState.tasks.filter(t => t.id !== id)
+    ProxyState.tasks = task
   }
   createTask(newTask) {
     ProxyState.tasks = [new Task(newTask), ...ProxyState.tasks]

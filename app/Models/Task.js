@@ -12,13 +12,11 @@ export class Task {
 
   get Template() {
     return /*html */`
-    <div class="col-md-4 p-4">
-      <div class="bg-white shadow rounded">
+    <div class=" p-4">
+      <div class="bg-white text-dark shadow rounded">
         <div class="p-3">
-        
-          <p class="m-0">${this.title}</p>
-          <p class="m-0">${this.id}</p>
-          <p>Test</p>
+          <p class="m-0">${this.title}</p> <input class="form-check-input" type="checkbox" id="check1" name="" value="something">
+          <label class="form-check-label"></label> <i class="mdi mdi-delete mdi-10px selectable text-danger" onclick="app.TaskController.deleteTaskItem('${this.id}')"></i>
         </div>
       </div>
     </div>`

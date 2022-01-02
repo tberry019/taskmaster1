@@ -32,4 +32,9 @@ export class TaskController {
   drawTaskForm() {
     _drawTaskForm()
   }
+
+  deleteTaskItem(taskItemId) {
+    console.log('task item id', taskItemId);
+    taskService.deleteTaskItem(taskItemId)
+  }
 }

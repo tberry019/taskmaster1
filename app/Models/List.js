@@ -31,7 +31,7 @@ export class List {
               <form onsubmit="app.TaskController.createTask('${this.id}')">
                 <div class="form-group d-flex">
                   <!-- Input field for toppings -->
-                  <input type="text" name="name" id="title" class="form-control" placeholder="Tasks....">
+                  <input type="text" name="name" id="title" class="form-control" placeholder="Tasks...." minlength="3" maxlength="15" required>
                   <button class="btn btn-success">+</button>
                 </div>
             </form>
