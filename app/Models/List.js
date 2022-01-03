@@ -18,28 +18,41 @@ export class List {
   get listTemplate() {
     return /*html*/`
     <div class="col-md-4 p-4">
-      <div class="bg-white shadow rounded">
-        <div class="p-3">
-          <p style="background-color: ${this.color}" class="m-0" >${this.title}</p>
-          
-          <i class="mdi mdi-delete mdi-24px selectable text-danger" onclick="app.ListController.deleteListItem('${this.id}')"></i>
-          <div class="col-12 mt-2">
-            <h6>Tasks: </h6>
-              <ul>
-              ${this.Tasks}
-              </ul>
-              <form onsubmit="app.TaskController.createTask('${this.id}')">
-                <div class="form-group d-flex">
-                  <!-- Input field for toppings -->
-                  <input type="text" name="name" id="title" class="form-control" placeholder="Tasks...." minlength="3" maxlength="15" required>
-                  <button class="btn btn-success">+</button>
-                </div>
-            </form>
+  <div class="bg-white shadow rounded">
+    <div class="p-3">
+
+      <p style="background-color: ${this.color}" class="m-0">${this.title}</p>
+
+      <i class="mdi mdi-delete mdi-24px selectable text-danger"
+        onclick="app.ListController.deleteListItem('${this.id}')"></i>
+      <div class="row">
+        <div class="col-12 mt-2">
+          <h6>Tasks: </h6>
+          <div id="checked">
+            completed: <span id="Completed"></span>
           </div>
         </div>
       </div>
-      
-    </div>`
+
+      <div class="row">
+        <div class="col-10">
+          <ul>
+            ${this.Tasks}
+          </ul>
+          <form onsubmit="app.TaskController.createTask('${this.id}')">
+            <div class="form-group d-flex">
+              <!-- Input field for toppings -->
+              <input type="text" name="name" id="title" class="form-control " placeholder="Tasks...." minlength="3"
+                maxlength="50" required>
+              <button class="btn btn-success">+</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`
 
   }
 
