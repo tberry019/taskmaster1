@@ -44,8 +44,18 @@ export class ListController {
 
   deleteListItem(listItemId) {
     console.log('list item id', listItemId);
-    listService.deleteListItem(listItemId)
+    if (confirm("Are you sure you want to delete this list?") == true) {
+      listService.deleteListItem(listItemId)
+    }
   }
+
+
+
+
+
+
 }
+
+
 
 

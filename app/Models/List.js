@@ -21,16 +21,14 @@ export class List {
   <div class="bg-white shadow rounded">
     <div class="p-3">
 
-      <p style="background-color: ${this.color}" class="m-0">${this.title}</p>
+      <p style="background-color: ${this.color}" class="m-0 text-center">${this.title}</p>
 
       <i class="mdi mdi-delete mdi-24px selectable text-danger"
         onclick="app.ListController.deleteListItem('${this.id}')"></i>
       <div class="row">
         <div class="col-12 mt-2">
           <h6>Tasks: </h6>
-          <div id="checked">
-            completed: <span id="Completed"></span>
-          </div>
+         
         </div>
       </div>
 

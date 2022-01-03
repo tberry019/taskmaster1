@@ -1,4 +1,4 @@
-export function getTaskForm() {
+// export function getTaskForm() {
   // return `
   //   <form onsubmit="app.ListController.createList()">
   //   <div class="mb-3 d-flex justify-content-between">
@@ -10,4 +10,4 @@ export function getTaskForm() {
   //   </div>
   // </form>
   //   `
-}
+// }

@@ -17,7 +17,7 @@ export class Task {
     <div class="p-4 text-wrap ">
       <div class="bg-white text-dark  text-wrap text-decoration-underline">
         <div class="p-3 text-wrap">
-          <p class="m-0 text-wrap">${this.title}</p> <input class="form-check-input text-wrap" type="checkbox" ${this.completed} name="" value="something">
+          <p class="m-0 text-wrap">${this.title}</p> <input class="form-check-input text-wrap" type="checkbox" ${!this.completed ? 'checkbox' : `checked`} name="" value="something" onclick="app.TaskController.checkTaskItem('${this.id}')"></i>>
           <label class="form-check-label text-wrap"></label> <i class="mdi mdi-delete mdi-10px selectable text-danger" onclick="app.TaskController.deleteTaskItem('${this.id}')"></i>
         </div>
       </div>

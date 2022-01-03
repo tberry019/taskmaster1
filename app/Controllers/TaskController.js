@@ -33,8 +33,18 @@ export class TaskController {
     _drawTaskForm()
   }
 
+  checkTaskItem(taskItemId) {
+    console.log('checked item!', taskItemId);
+    if (confirm("This task has been completed") == true) {
+      taskService.checkTaskItem(taskItemId)
+    }
+
+  }
+
   deleteTaskItem(taskItemId) {
     console.log('task item id', taskItemId);
-    taskService.deleteTaskItem(taskItemId)
+    if (confirm("Are you sure you want to delete this task?") == true) {
+      taskService.deleteTaskItem(taskItemId)
+    }
   }
 }
